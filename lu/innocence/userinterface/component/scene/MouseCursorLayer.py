@@ -6,6 +6,7 @@ from lu.innocence.userinterface.component.scene.MouseCursor import MouseCursor
 
 class MouseCursorLayer(AbstractLayer):
     def __init__(self, unit_width, unit_height, unit_size, parent=None):
+        super(MouseCursorLayer, self).__init__(unit_width, unit_height, parent)
         self.mouse_is_down = False
         self.current_layer_index = 0
         self.current_tileset = None

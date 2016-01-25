@@ -3,7 +3,7 @@ from PySide import QtGui, QtCore
 
 class AbstractLayer(QtGui.QGraphicsItem):
 
-    def __init__(self, unit_width, unit_height, unit_size, parent):
+    def __init__(self, unit_width, unit_height, unit_size, parent=None):
         super(AbstractLayer, self).__init__(parent)
         self.unit_width = unit_width
         self.unit_height = unit_height

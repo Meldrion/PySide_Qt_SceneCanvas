@@ -3,6 +3,7 @@ import math
 
 from lu.innocence.userinterface.component.scene import TileRenderer
 from lu.innocence.userinterface.component.scene.AbstractLayer import AbstractLayer
+from lu.innocence.userinterface.component.scene.TileData import TileData
 
 
 class TileLayer(AbstractLayer):
@@ -38,3 +39,15 @@ class TileLayer(AbstractLayer):
                 tile = self.elements[i][j]
                 if tile is not None:
                     TileRenderer.instance().render(painter, tile, i, j)
+        TileRenderer.instance().flush()
+
+    def addTileAt(self, x, y, tilesetIndex, tilesetX, tilesetY):
+        data = TileData(tilesetX, tilesetY, tilesetIndex,
+                        self.linked_tilesets.at(tilesetIndex).getTileAt(tilesetX, tilesetY))
+        self.elements[x][y] = data
+
+    def deleteTileAt(self, x, y):
+        self.elements[x][y] = None
+
+    def addTileset(self, tileset):
+        self.linked_tilesets.append(tileset)

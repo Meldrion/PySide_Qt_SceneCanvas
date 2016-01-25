@@ -82,12 +82,12 @@ class SceneCanvas(QtGui.QGraphicsView):
         tileLayer4 = TileLayer(mapWidth, mapHeight, tileDim)
         mouseCursor = MouseCursorLayer(mapWidth, mapHeight, tileDim)
 
-        self.current_scene.addLayer(background)
-        self.current_scene.addLayer(tileLayer)
-        self.current_scene.addLayer(tileLayer2)
-        self.current_scene.addLayer(tileLayer3)
-        self.current_scene.addLayer(tileLayer4)
-        self.current_scene.addLayer(mouseCursor)
+        self.current_scene.add_layer(background)
+        self.current_scene.add_layer(tileLayer)
+        self.current_scene.add_layer(tileLayer2)
+        self.current_scene.add_layer(tileLayer3)
+        self.current_scene.add_layer(tileLayer4)
+        self.current_scene.add_layer(mouseCursor)
 
         # Dummy
         desert_tileset = Tileset("desert.png", 32)
