@@ -3,7 +3,7 @@ from PySide import QtCore, QtGui
 
 class MouseCursor(QtGui.QGraphicsItem):
     def __init__(self, unit_size, parent=None):
-        super(MouseCursor, self).__init__(self)
+        super(MouseCursor, self).__init__(parent)
         self.unit_start_x = 0
         self.unit_start_y = 0
         self.unit_selection_width = 0
