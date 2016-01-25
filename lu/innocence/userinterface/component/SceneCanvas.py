@@ -10,7 +10,7 @@ from lu.innocence.userinterface.component.scene.Tileset import Tileset
 
 class SceneCanvas(QtGui.QGraphicsView):
 
-    def __init__(self, parent=0):
+    def __init__(self, parent=None):
         super(SceneCanvas, self).__init__(parent)
         self.setMouseTracking(True)
         self.setDragMode(QtGui.QGraphicsView.NoDrag)

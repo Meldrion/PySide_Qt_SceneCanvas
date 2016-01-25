@@ -4,7 +4,7 @@ from lu.innocence.userinterface.component.scene import MouseCursorLayer
 
 
 class Scene(QtGui.QGraphicsScene):
-    def __init__(self, parent):
+    def __init__(self, parent=None):
         super(Scene, self).__init__(parent)
         self.layers = []
         self.setBackgroundBrush(QtGui.QBrush(QtGui.QColor(96, 96, 96)))

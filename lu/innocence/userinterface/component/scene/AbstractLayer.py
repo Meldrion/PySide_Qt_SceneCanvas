@@ -1,11 +1,10 @@
-from PySide import QtGui
-from PySide import QtCore
+from PySide import QtGui, QtCore
 
 
 class AbstractLayer(QtGui.QGraphicsItem):
 
-    def __init__(self, unit_width, unit_height, unit_size, parent=0):
-        super(QtGui.QGraphicsItem, self).__init__()
+    def __init__(self, unit_width, unit_height, unit_size, parent):
+        super(AbstractLayer, self).__init__(parent)
         self.unit_width = unit_width
         self.unit_height = unit_height
         self.unit_size = unit_size

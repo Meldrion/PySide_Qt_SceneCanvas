@@ -5,7 +5,7 @@ from lu.innocence.userinterface.component.scene.AbstractLayer import AbstractLay
 
 class SceneBackgroundWhiteLayer(AbstractLayer):
 
-    def __init__(self, unit_width, unit_height, unit_size, parent=0):
+    def __init__(self, unit_width, unit_height, unit_size, parent=None):
         super(SceneBackgroundWhiteLayer, self).__init__(unit_width,
                                                         unit_height,
                                                         unit_size,
