@@ -9,6 +9,7 @@ from lu.innocence.userinterface.component.scene.TileData import TileData
 class TileLayer(AbstractLayer):
     def __init__(self, unit_width, unit_height, unit_size, parent=None):
         super(TileLayer, self).__init__(unit_width, unit_height, unit_size, parent)
+        self.linked_tilesets = []
         self.elements = []
         self.startPosition = QtCore.QPointF(0, 0)
         self.zoom = 1.0
@@ -43,7 +44,7 @@ class TileLayer(AbstractLayer):
 
     def addTileAt(self, x, y, tilesetIndex, tilesetX, tilesetY):
         data = TileData(tilesetX, tilesetY, tilesetIndex,
-                        self.linked_tilesets.at(tilesetIndex).getTileAt(tilesetX, tilesetY))
+                        self.linked_tilesets[tilesetIndex].getTileAt(tilesetX, tilesetY))
         self.elements[x][y] = data
 
     def deleteTileAt(self, x, y):
