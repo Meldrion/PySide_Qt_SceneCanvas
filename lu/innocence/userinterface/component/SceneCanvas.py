@@ -113,7 +113,6 @@ class SceneCanvas(QtGui.QGraphicsView):
                 tileLayer3.addTileAt(i, j, 0, t_x, t_y)
                 tileLayer4.addTileAt(i, j, 0, t_x, t_y)
         # Dummy end
-
         self.setScene(self.current_scene)
         self.setSceneRect(0, 0, tileDim * mapWidth, tileDim * mapHeight)
         self.centerOn(0, 0)
