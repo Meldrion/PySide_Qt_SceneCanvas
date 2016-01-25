@@ -7,4 +7,5 @@ class MainWindowController:
     def __init__(self):
         self.view = MainWindowView()
         self.view.centerOnScreen()
+        self.view.scene_canvas.init()
         self.view.show()

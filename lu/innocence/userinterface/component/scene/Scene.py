@@ -4,7 +4,6 @@ from lu.innocence.userinterface.component.scene import MouseCursorLayer
 
 
 class Scene(QtGui.QGraphicsScene):
-
     def __init__(self, parent):
         super(Scene, self).__init__(parent)
         self.layers = []
@@ -13,20 +12,24 @@ class Scene(QtGui.QGraphicsScene):
     def mouseMoveEvent(self, event):
         for current_layer in self.layers:
             current_layer.mouseMoveEvent(event)
-        super(Scene,self).mouseMoveEvent(event)
+        super(Scene, self).mouseMoveEvent(event)
 
-    def mouseLeaveEvent(self, event):
+    def mouse_leave_event(self):
         for current_layer in self.layers:
             if isinstance(current_layer, MouseCursorLayer):
                 current_layer.hide()
 
-    def mouseEnterEvent(self, event):
+    def mouse_enter_event(self):
         for current_layer in self.layers:
             if isinstance(current_layer, MouseCursorLayer):
                 current_layer.show()
 
-    def changeViewport(self, start_position, zoom):
+    def change_viewport(self, start_position, zoom):
         for current_layer in self.layers:
             current_layer.setZoom(zoom)
             current_layer.setRenderingStartPosition(start_position)
 
+    def add_layer(self, layer):
+        if layer not in self.layers:
+            self.layers.append(layer)
+            self.addItem(layer)

@@ -19,11 +19,11 @@ class SceneCanvas(QtGui.QGraphicsView):
 
     def leaveEvent(self, event):
         if self.current_scene is not None:
-            self.current_scene.mouseLeaveEvent()
+            self.current_scene.mouse_leave_event()
 
     def enterEvent(self, event):
         if self.current_scene is not None:
-            self.current_scene.mouseEnterEvent()
+            self.current_scene.mouse_enter_event()
 
     def wheelEvent(self, event):
         if QtGui.QApplication.keyboardModifiers() & QtCore.Qt.ControlModifier:
