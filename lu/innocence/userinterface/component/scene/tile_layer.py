@@ -2,8 +2,8 @@ from PySide import QtGui, QtCore
 import math
 
 from lu.innocence.userinterface.component.scene.tile_renderer import TileRenderer
-from lu.innocence.userinterface.component.scene.AbstractLayer import AbstractLayer
-from lu.innocence.userinterface.component.scene.TileData import TileData
+from lu.innocence.userinterface.component.scene.abstract_layer import AbstractLayer
+from lu.innocence.userinterface.component.scene.tile_data import TileData
 
 
 class TileLayer(AbstractLayer):

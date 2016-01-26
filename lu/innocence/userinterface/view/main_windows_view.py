@@ -9,7 +9,7 @@
 
 from PySide import QtCore, QtGui
 
-from lu.innocence.userinterface.component.SceneCanvas import SceneCanvas
+from lu.innocence.userinterface.component.scene_canvas import SceneCanvas
 
 
 class MainWindowView(QtGui.QMainWindow):

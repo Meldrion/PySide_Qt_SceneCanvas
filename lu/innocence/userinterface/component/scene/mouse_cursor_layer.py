@@ -1,7 +1,7 @@
 from PySide import QtGui, QtCore
 
-from lu.innocence.userinterface.component.scene.AbstractLayer import AbstractLayer
-from lu.innocence.userinterface.component.scene.MouseCursor import MouseCursor
+from lu.innocence.userinterface.component.scene.abstract_layer import AbstractLayer
+from lu.innocence.userinterface.component.scene.mouse_cursor import MouseCursor
 
 
 class MouseCursorLayer(AbstractLayer):

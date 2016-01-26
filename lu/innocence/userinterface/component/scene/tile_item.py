@@ -1,6 +1,6 @@
 from PySide import QtCore, QtGui
 
-from lu.innocence.userinterface.component.scene.TileData import TileData
+from lu.innocence.userinterface.component.scene.tile_data import TileData
 
 
 class TileItem(QtGui.QGraphicsItem):

@@ -1,6 +1,6 @@
 from PySide import QtGui
 
-from lu.innocence.userinterface.component.scene.AbstractLayer import AbstractLayer
+from lu.innocence.userinterface.component.scene.abstract_layer import AbstractLayer
 
 
 class SceneBackgroundWhiteLayer(AbstractLayer):

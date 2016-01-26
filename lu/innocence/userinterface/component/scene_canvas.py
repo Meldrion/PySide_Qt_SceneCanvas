@@ -5,10 +5,10 @@ from PySide import QtGui
 
 from lu.project_root import *
 from lu.innocence.userinterface.component.scene.mouse_cursor_layer import MouseCursorLayer
-from lu.innocence.userinterface.component.scene.Scene import Scene
-from lu.innocence.userinterface.component.scene.SceneBackgroundWhiteLayer import SceneBackgroundWhiteLayer
-from lu.innocence.userinterface.component.scene.TileLayer import TileLayer
-from lu.innocence.userinterface.component.scene.Tileset import Tileset
+from lu.innocence.userinterface.component.scene.scene import Scene
+from lu.innocence.userinterface.component.scene.scene_background_white_layer import SceneBackgroundWhiteLayer
+from lu.innocence.userinterface.component.scene.tile_layer import TileLayer
+from lu.innocence.userinterface.component.scene.tileset import Tileset
 
 
 class SceneCanvas(QtGui.QGraphicsView):
