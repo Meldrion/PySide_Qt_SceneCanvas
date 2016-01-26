@@ -11,6 +11,7 @@ class AbstractLayer(QtGui.QGraphicsItem):
         self.setFlag(QtGui.QGraphicsItem.ItemClipsChildrenToShape)
         self.zoom_value = 1
         self.startPosition = QtCore.QRectF()
+        self.setUnitSize(32)
 
     def setUnitSize(self, unitSize):
         self.unit_size = unitSize

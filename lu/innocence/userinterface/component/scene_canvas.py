@@ -89,7 +89,7 @@ class SceneCanvas(QtGui.QGraphicsView):
         self.current_scene.add_layer(tileLayer2)
         self.current_scene.add_layer(tileLayer3)
         self.current_scene.add_layer(tileLayer4)
-        # self.current_scene.add_layer(mouseCursor)
+        self.current_scene.add_layer(mouseCursor)
 
         # Dummy
         desert_tileset = Tileset(os.path.join(get_project_root(), "desert.png"), 32)
