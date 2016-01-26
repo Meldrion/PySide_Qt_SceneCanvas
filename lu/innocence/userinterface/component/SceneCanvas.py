@@ -52,7 +52,7 @@ class SceneCanvas(QtGui.QGraphicsView):
             t_x = self.horizontalScrollBar().value()
             t_y = self.verticalScrollBar().value()
 
-            self.current_scene.changeViewport(QtCore.QPointF(t_x, t_y), scale)
+            self.current_scene.change_viewport(QtCore.QPointF(t_x, t_y), scale)
             self.current_scene.update(t_x, t_y, self.width() / scale, self.height() / scale)
 
     def setup_matrix(self):
@@ -64,7 +64,7 @@ class SceneCanvas(QtGui.QGraphicsView):
 
             t_x = self.horizontalScrollBar().value()
             t_y = self.verticalScrollBar().value()
-            self.current_scene.changeViewport(QtCore.QPointF(t_x, t_y), scale)
+            self.current_scene.change_viewport(QtCore.QPointF(t_x, t_y), scale)
 
             matrix = QtGui.QMatrix()
             matrix.scale(scale, scale)
@@ -85,12 +85,12 @@ class SceneCanvas(QtGui.QGraphicsView):
         tileLayer4 = TileLayer(mapWidth, mapHeight, tileDim)
         mouseCursor = MouseCursorLayer(mapWidth, mapHeight, tileDim)
 
-        self.current_scene.add_layer(background)
-        self.current_scene.add_layer(tileLayer)
-        self.current_scene.add_layer(tileLayer2)
-        self.current_scene.add_layer(tileLayer3)
-        self.current_scene.add_layer(tileLayer4)
-        self.current_scene.add_layer(mouseCursor)
+        # self.current_scene.add_layer(background)
+        # self.current_scene.add_layer(tileLayer)
+        # self.current_scene.add_layer(tileLayer2)
+        # self.current_scene.add_layer(tileLayer3)
+        # self.current_scene.add_layer(tileLayer4)
+        # self.current_scene.add_layer(mouseCursor)
 
         # Dummy
         desert_tileset = Tileset(os.path.join( get_project_root(), "desert.png"), 32)
@@ -116,6 +116,6 @@ class SceneCanvas(QtGui.QGraphicsView):
                 tileLayer3.addTileAt(i, j, 0, t_x, t_y)
                 tileLayer4.addTileAt(i, j, 0, t_x, t_y)
         # Dummy end
-        self.setScene(self.current_scene)
+        # self.setScene(self.current_scene)
         self.setSceneRect(0, 0, tileDim * mapWidth, tileDim * mapHeight)
-        self.centerOn(0, 0)
+        # self.centerOn(0, 0)
