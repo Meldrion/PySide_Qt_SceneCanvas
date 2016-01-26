@@ -30,10 +30,10 @@ class TileLayer(AbstractLayer):
         width = math.ceil(widget.width() / tile_dim)
         height = math.ceil(widget.height() / tile_dim)
 
-        start_x = max(self.startPosition.x() / tile_dim, 0)
-        start_y = max(self.startPosition.y() / tile_dim, 0)
-        end_x = min(start_x + width, self.unit_width - 1)
-        end_y = min(start_y + height, self.unit_height - 1)
+        start_x = int(max(self.startPosition.x() / tile_dim, 0))
+        start_y = int(max(self.startPosition.y() / tile_dim, 0))
+        end_x = int(min(start_x + width, self.unit_width - 1))
+        end_y = int(min(start_y + height, self.unit_height - 1))
 
         for i in range(start_x, end_x):
             for j in range(start_y, end_y):

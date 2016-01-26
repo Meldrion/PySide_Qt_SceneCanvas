@@ -9,6 +9,7 @@ class AbstractLayer(QtGui.QGraphicsItem):
         self.unit_height = unit_height
         self.unit_size = unit_size
         self.setFlag(QtGui.QGraphicsItem.ItemClipsChildrenToShape)
+        self.zoom_value = 1
 
     def setUnitSize(self, unitSize):
         self.unit_size = unitSize
@@ -24,18 +25,18 @@ class AbstractLayer(QtGui.QGraphicsItem):
 
     def setZoom(self, zoom):
         if zoom < 0.2:
-            self.zoom = 0.2
-            m_zoom = zoom
+            zoom = 0.2
+        self.zoom_value = zoom
 
     def setRenderingStartPosition(self, startPos):
         self.startPosition.setX(startPos.x())
         self.startPosition.setY(startPos.y())
 
     def mouseMoveEvent(self, event):
-        super(QtGui.QGraphicsItem, self).mouseMoveEvent(event)
+        super(AbstractLayer, self).mouseMoveEvent(event)
 
     def mousePressEvent(self, event):
-        super(QtGui.QGraphicsItem, self).mousePressEvent(event)
+        super(AbstractLayer, self).mousePressEvent(event)
 
-    def mouseReleaseEvent(self,event):
-        super(QtGui.QGraphicsItem, self).mouseRelease(event)
+    def mouseReleaseEvent(self, event):
+        super(AbstractLayer, self).mouseRelease(event)

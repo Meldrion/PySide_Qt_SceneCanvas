@@ -4,7 +4,7 @@ from PySide import QtCore
 from PySide import QtGui
 
 from lu.project_root import *
-from lu.innocence.userinterface.component.scene.MouseCursorLayer import MouseCursorLayer
+from lu.innocence.userinterface.component.scene.mouse_cursor_layer import MouseCursorLayer
 from lu.innocence.userinterface.component.scene.Scene import Scene
 from lu.innocence.userinterface.component.scene.SceneBackgroundWhiteLayer import SceneBackgroundWhiteLayer
 from lu.innocence.userinterface.component.scene.TileLayer import TileLayer
@@ -12,7 +12,6 @@ from lu.innocence.userinterface.component.scene.Tileset import Tileset
 
 
 class SceneCanvas(QtGui.QGraphicsView):
-
     def __init__(self, parent=None):
         super(SceneCanvas, self).__init__(parent)
         self.setMouseTracking(True)
@@ -86,14 +85,14 @@ class SceneCanvas(QtGui.QGraphicsView):
         mouseCursor = MouseCursorLayer(mapWidth, mapHeight, tileDim)
 
         # self.current_scene.add_layer(background)
-        # self.current_scene.add_layer(tileLayer)
+        self.current_scene.add_layer(tileLayer)
         # self.current_scene.add_layer(tileLayer2)
         # self.current_scene.add_layer(tileLayer3)
         # self.current_scene.add_layer(tileLayer4)
         # self.current_scene.add_layer(mouseCursor)
 
         # Dummy
-        desert_tileset = Tileset(os.path.join( get_project_root(), "desert.png"), 32)
+        desert_tileset = Tileset(os.path.join(get_project_root(), "desert.png"), 32)
 
         tileLayer.addTileset(desert_tileset)
         tileLayer2.addTileset(desert_tileset)
@@ -108,14 +107,13 @@ class SceneCanvas(QtGui.QGraphicsView):
             t_x = 0 if t_x == 7 else t_x + 1
             for j in range(0, mapHeight):
                 t_y = 0 if t_y == 14 else t_y + 1
-
-                # tileLayer->addTileAt(i,j,0,1,0)
+                tileLayer.addTileAt(i, j, 0, 1, 0)
                 # Worst Case
                 tileLayer.addTileAt(i, j, 0, t_x, t_y)
                 tileLayer2.addTileAt(i, j, 0, t_x, t_y)
                 tileLayer3.addTileAt(i, j, 0, t_x, t_y)
                 tileLayer4.addTileAt(i, j, 0, t_x, t_y)
         # Dummy end
-        # self.setScene(self.current_scene)
+        self.setScene(self.current_scene)
         self.setSceneRect(0, 0, tileDim * mapWidth, tileDim * mapHeight)
         # self.centerOn(0, 0)

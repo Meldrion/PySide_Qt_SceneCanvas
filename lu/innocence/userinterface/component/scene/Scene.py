@@ -1,6 +1,6 @@
 from PySide import QtGui
 
-from lu.innocence.userinterface.component.scene import MouseCursorLayer
+from lu.innocence.userinterface.component.scene.mouse_cursor_layer import MouseCursorLayer
 
 
 class Scene(QtGui.QGraphicsScene):
