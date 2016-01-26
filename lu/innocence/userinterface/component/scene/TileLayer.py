@@ -1,7 +1,7 @@
 from PySide import QtGui, QtCore
 import math
 
-from lu.innocence.userinterface.component.scene import TileRenderer
+from lu.innocence.userinterface.component.scene.tile_renderer import TileRenderer
 from lu.innocence.userinterface.component.scene.AbstractLayer import AbstractLayer
 from lu.innocence.userinterface.component.scene.TileData import TileData
 
