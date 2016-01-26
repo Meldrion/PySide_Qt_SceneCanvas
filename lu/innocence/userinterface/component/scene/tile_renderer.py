@@ -37,12 +37,15 @@ class TileRenderer:
         self.fragments.append(fragment)
 
     def flush(self, painter):
-        if self.current_tile is None:
+
+        fragment_count = len(self.fragments)
+
+        if self.current_tile is None or fragment_count <= 0:
             return
 
-        painter.drawPixmapFragments(self.fragments,
-                                    len(self.fragments),
+        painter.drawPixmapFragments(self.fragments[0],
+                                    fragment_count,
                                     self.current_tile.tilePicture())
 
         self.current_tile = None
-        self.fragments.clear()
+        self.fragments = []

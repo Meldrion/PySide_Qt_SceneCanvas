@@ -40,7 +40,7 @@ class TileLayer(AbstractLayer):
                 tile = self.elements[i][j]
                 if tile is not None:
                     TileRenderer.instance().render(painter, tile, i, j)
-        TileRenderer.instance().flush()
+        TileRenderer.instance().flush(painter)
 
     def addTileAt(self, x, y, tilesetIndex, tilesetX, tilesetY):
         data = TileData(tilesetX, tilesetY, tilesetIndex,
