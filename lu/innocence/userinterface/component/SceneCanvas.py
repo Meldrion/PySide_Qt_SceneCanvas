@@ -1,6 +1,9 @@
+import os
+
 from PySide import QtCore
 from PySide import QtGui
 
+from lu.project_root import *
 from lu.innocence.userinterface.component.scene.MouseCursorLayer import MouseCursorLayer
 from lu.innocence.userinterface.component.scene.Scene import Scene
 from lu.innocence.userinterface.component.scene.SceneBackgroundWhiteLayer import SceneBackgroundWhiteLayer
@@ -90,7 +93,7 @@ class SceneCanvas(QtGui.QGraphicsView):
         self.current_scene.add_layer(mouseCursor)
 
         # Dummy
-        desert_tileset = Tileset("desert.png", 32)
+        desert_tileset = Tileset(os.path.join( get_project_root(), "desert.png"), 32)
 
         tileLayer.addTileset(desert_tileset)
         tileLayer2.addTileset(desert_tileset)

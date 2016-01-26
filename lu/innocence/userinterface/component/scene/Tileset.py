@@ -1,5 +1,7 @@
 from PySide import QtGui
 
+from lu.project_root import *
+
 
 class Tileset():
 

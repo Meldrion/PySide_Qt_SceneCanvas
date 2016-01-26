@@ -17,7 +17,7 @@ class TileLayer(AbstractLayer):
 
     def init(self):
 
-        self.elements.clear()
+        self.elements = []
         for i in range(0, self.unit_width):
             inner_list = []
             for j in range(0, self.unit_height):
@@ -44,7 +44,7 @@ class TileLayer(AbstractLayer):
 
     def addTileAt(self, x, y, tilesetIndex, tilesetX, tilesetY):
         data = TileData(tilesetX, tilesetY, tilesetIndex,
-                        self.linked_tilesets[tilesetIndex].getTileAt(tilesetX, tilesetY))
+                        self.linked_tilesets[tilesetIndex].get_tile_at(tilesetX, tilesetY))
         self.elements[x][y] = data
 
     def deleteTileAt(self, x, y):
