@@ -10,6 +10,11 @@ class MouseCursor(QtGui.QGraphicsItem):
         self.unit_selection_height = 0
         self.current_tileset = None
 
+    def boundingRect(self):
+        return QtCore.QRectF(0, 0,
+                             self.unit_selection_width * self.unit_size,
+                             self.unit_selection_height * self.unit_size)
+
     def paint(self, painter, option, widget):
 
         rect = self.boundingRect()
