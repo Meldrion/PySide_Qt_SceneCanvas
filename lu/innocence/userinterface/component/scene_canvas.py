@@ -117,4 +117,4 @@ class SceneCanvas(QtGui.QGraphicsView):
         # Dummy end
         self.setScene(self.current_scene)
         self.setSceneRect(0, 0, tileDim * mapWidth, tileDim * mapHeight)
-        # self.centerOn(0, 0)
+        self.centerOn(0, 0)
