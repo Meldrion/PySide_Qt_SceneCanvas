@@ -25,7 +25,7 @@ class MouseCursorLayer(AbstractLayer):
         if self.boundingRect().contains(scenePos):
 
             self.mouseCursor.show()
-            unit_pos = QtGui.QPointF(scenePos.x() / self.unit_size, scenePos.y() / self.unit_size)
+            unit_pos = QtCore.QPointF(scenePos.x() / self.unit_size, scenePos.y() / self.unit_size)
 
             if unit_pos.x() != self.mouse_unit_position.x() or unit_pos.y() != self.mouse_unit_position.y():
                 self.mouse_unit_position = QtCore.QPointF(unit_pos)

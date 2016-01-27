@@ -9,6 +9,8 @@ class MouseCursor(QtGui.QGraphicsItem):
         self.unit_selection_width = 0
         self.unit_selection_height = 0
         self.current_tileset = None
+        self.unit_size = unit_size
+        self.rect_color = QtGui.QColor(255, 0, 0, 128)
 
     def boundingRect(self):
         return QtCore.QRectF(0, 0,
@@ -19,16 +21,16 @@ class MouseCursor(QtGui.QGraphicsItem):
 
         rect = self.boundingRect()
         if self.current_tileset is not None:
-            painter.setOpacity(0.45);
+            painter.setOpacity(0.45)
 
-            for i in range(self.unit_start_X, self.unit_start_X + self.unit_selection_width):
-                for j in range(self.unit_start_Y, self.unit_start_Y + self.unit_selection_width):
+            for i in range(self.unit_start_x, self.unit_start_x + self.unit_selection_width):
+                for j in range(self.unit_start_y, self.unit_start_y + self.unit_selection_width):
 
-                    if self.m_current_tileset.isInRange(i, j):
-                        painter.drawPixmap((i - self.unit_start_X) * self.unit_size,
-                                           (j - self.unit_start_Y) * self.unit_size,
+                    if self.current_tileset.is_in_range(i, j):
+                        painter.drawPixmap((i - self.unit_start_x) * self.unit_size,
+                                           (j - self.unit_start_y) * self.unit_size,
                                            self.unit_size, self.unit_size,
-                                           self.current_tileset.getTileAt(i, j))
+                                           self.current_tileset.get_tile_at(i, j))
 
         painter.fillRect(rect, QtGui.QBrush(self.rect_color))
 
