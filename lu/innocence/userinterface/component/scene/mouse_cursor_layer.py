@@ -17,21 +17,21 @@ class MouseCursorLayer(AbstractLayer):
         self.mouseCursor.setSelectionDimension(5, 5)
         self.hide()
 
-    def paint(painter, option, widget):
+    def paint(self, painter, option, widget):
         pass
 
     def mouseMoveEvent(self, event):
-        scenePos = event.scenePos()
-        if self.boundingRect().contains(scenePos):
+        scene_pos = event.scenePos()
+        if self.boundingRect().contains(scene_pos):
 
             self.mouseCursor.show()
-            unit_pos = QtCore.QPointF(scenePos.x() / self.unit_size, scenePos.y() / self.unit_size)
+            unit_pos = QtCore.QPointF(int(scene_pos.x() / self.unit_size),
+                                      int(scene_pos.y() / self.unit_size))
 
             if unit_pos.x() != self.mouse_unit_position.x() or unit_pos.y() != self.mouse_unit_position.y():
                 self.mouse_unit_position = QtCore.QPointF(unit_pos)
                 self.mouseCursor.setPos(self.mouse_unit_position.x() * self.unit_size,
                                         self.mouse_unit_position.y() * self.unit_size)
-
         else:
             self.mouseCursor.hide()
 
