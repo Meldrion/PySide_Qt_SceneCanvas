@@ -1,7 +1,6 @@
 import os
 
-from PySide import QtCore
-from PySide import QtGui
+from PySide import QtCore, QtGui, QtOpenGL
 
 from lu.project_root import *
 from lu.innocence.userinterface.component.scene.mouse_cursor_layer import MouseCursorLayer
@@ -119,3 +118,10 @@ class SceneCanvas(QtGui.QGraphicsView):
         self.setScene(self.current_scene)
         self.setSceneRect(0, 0, tileDim * mapWidth, tileDim * mapHeight)
         self.centerOn(0, 0)
+
+    def set_opengl_enabled(self, flag):
+        if flag:
+            gl_widget = QtOpenGL.QGLWidget(
+                    QtOpenGL.QGLFormat(QtOpenGL.QGL.SampleBuffers))
+            gl_widget.setMouseTracking(True)
+            self.setViewport(gl_widget)

@@ -12,7 +12,7 @@ class TileLayer(AbstractLayer):
         self.linked_tilesets = []
         self.elements = []
         self.startPosition = QtCore.QPointF(0, 0)
-        self.zoom = 1.0
+        self.zoom = 0.5
         self.init()
 
     def init(self):
@@ -27,6 +27,7 @@ class TileLayer(AbstractLayer):
     def paint(self, painter, option, widget):
 
         tile_dim = self.unit_size * self.zoom
+
         width = math.ceil(widget.width() / tile_dim)
         height = math.ceil(widget.height() / tile_dim)
 
