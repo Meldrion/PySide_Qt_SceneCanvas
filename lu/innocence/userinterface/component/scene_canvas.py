@@ -33,9 +33,11 @@ class SceneCanvas(QtGui.QGraphicsView):
                 self.zoom_value += 6
                 if 500 < self.zoom_value:
                     self.zoom_value = 500
-                else:
-                    if self.zoom_value < 0:
-                        self.zoom_value = 0
+            else:
+                self.zoom_value -= 6
+                if self.zoom_value < 0:
+                    self.zoom_value = 0
+
             self.setup_matrix()
         else:
             super(SceneCanvas, self).wheelEvent(event)
