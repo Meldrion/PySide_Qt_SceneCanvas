@@ -45,7 +45,7 @@ class SceneCanvas(QtGui.QGraphicsView):
     def scrollContentsBy(self, dx, dy):
         super(SceneCanvas, self).scrollContentsBy(dx, dy)
         if self.current_scene is not None:
-            scale = pow(2, (self.zoom_value - 250) / 50)
+            scale = pow(2, (self.zoom_value - 250.0) / 50.0)
             if scale < 0.2:
                 scale = 0.2
 
@@ -58,7 +58,7 @@ class SceneCanvas(QtGui.QGraphicsView):
     def setup_matrix(self):
 
         if self.current_scene is not None:
-            scale = pow(2, (self.zoom_value - 250) / 50)
+            scale = pow(2, (self.zoom_value - 250.0) / 50.0)
             if scale < 0.2:
                 scale = 0.2
 
